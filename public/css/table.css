@@ -1,0 +1,70 @@
+.top {
+    text-align: center;
+}
+
+.top img {
+    width: 300px;
+}
+
+table {
+    width: 90%;
+    margin: auto;
+}
+
+tr {
+    display: flex;
+    width: 100%;
+    padding: 18px 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: left;
+}
+
+tr:nth-of-type(odd) {
+    background: #EEEEEE;
+}
+
+tr:first-child {
+    background: #000;
+}
+
+tr:first-child th {
+    color: #fff;
+    font-size: 20px;
+}
+
+th {
+    text-align: left;
+    width: 14%;
+    font-weight: lighter;
+    text-transform: lowercase;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.three tr th {
+    width: 20%;
+}
+
+.title {
+    text-align: center;
+    padding: 10px;
+}
+
+.btns {
+    display: flex;
+    gap: 10px;
+}
+
+.btns a {
+    border: 2px red solid;
+    padding: 5px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
