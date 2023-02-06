@@ -28,9 +28,10 @@ tr:first-child {
     background: #000;
 }
 
-tr:first-child th {
+.heading {
     color: #fff;
     font-size: 20px;
+    text-align: left;
 }
 
 th {
@@ -52,6 +53,8 @@ a {
 .title {
     text-align: center;
     padding: 10px;
+    font-size: 25px;
+    color: white;
 }
 
 .btns {
@@ -67,4 +70,14 @@ a {
     font-weight: bold;
     border-radius: 10px;
     cursor: pointer;
+}
+
+i {
+    font-size: 22px;
+}
+
+.table-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }

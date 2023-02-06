@@ -2,16 +2,26 @@
     <div class="content">
         <img src="/img/icon.png" alt="Grey Advertising">
         <p class="instructions">Please enter secret key to access back-end</p>
-        <form action="/login" method="post">
+        
         <div class="input-holder" >
             <input type="text" placeholder="Type in your pin....." name="pin">
         </div>
         <div class="btn-holder">
             <button type="submit">Login</button>
         </div>
-        </form>
+   
         
     </div>
+    <script>
+        document.querySelector('button').addEventListener('click', ()=>{
+            var input = document.querySelector('input').value
+            if(input){
+                window.location = `/login/${input}`;
+            }else{
+                return
+            }
+        })
+    </script>
 </div>
 
 <link rel="stylesheet" href="/css/login.css">

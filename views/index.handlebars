@@ -1,16 +1,30 @@
 <div class="top">
     <img src="/img/icon.png" alt="Grey">
 </div>
-<h1 class="title">Talent</h1>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Surnname</th>
-        <th>Occupation</th> 
-        <th>Date Booked</th>
-        <th>Client Name</th>
-        <th>Client Email</th>
-        {{!-- <th>Action</th> --}}
+<div class="tabs">
+    <div class="pending-approval-btn active btns-b" onclick="displayTab(this)">
+        Pending Approval
+    </div>
+    <div class="approved-btn btns-b" onclick="displayTab(this)">
+        Approved
+    </div>
+</div>
+<br> <br> <br>
+
+<div class="pending-approval div">
+    <div class="table-wrapper">
+        <div class="top-section">
+            <h1 class="title">Individual Talent</h1>
+        </div>
+        <table>
+    <tr >
+        <th class="heading">Name</th>
+        <th class="heading">Surnname</th>
+        <th class="heading">Occupation</th> 
+        <th class="heading">Date Booked</th>
+        <th class="heading">Client Name</th>
+        <th class="heading">Client Email</th>
+        <th class="heading">Action</th>
     </tr>
     {{#each data}}
     <tr>
@@ -20,31 +34,110 @@
        <th>{{this.date_booked}}</th>
        <th>{{this.client_name}}</th>
        <th><a href='mailto:{{this.email}}'>{{this.email}}</a></th>
-       {{!-- <th class="btns"><a href="/approve/{{this.name}}/{{this.surname}}/{{this.client_name}}/{{this.doc_id}}/single">Approve</a><a href="/decline/{{this.name}}/{{this.surname}}/{{this.client_name}}/{{this.doc_id}}/single">Decline</a></th> --}}
-
+       <th class="btns"><a href="/approve/{{this.doc_id}}/single">Approve</a><a href="/decline/{{this.doc_id}}/single">Decline</a></th>
     </tr>
   {{/each}}
 </table>
+    </div>
+   
 
 
 
 
-<h1 class="title">Teams Talent</h1>
+
+<br> <br> <br> <br>
+<div class="table-wrapper">
+<div class="top-section">
+        <th><h1 class="title">Teams Talent</h1></th>
+</div>
 <table class="three">
-    <tr>
-        <th>Team Names</th>
-        <th>Date Booked</th>
-        <th>Client Name</th>
-        <th>Client Email</th>
+    
+    <tr class="middle-section">
+        <th class="heading">Team Names</th>
+        <th class="heading">Date Booked</th>
+        <th class="heading">Client Name</th>
+        <th class="heading">Client Email</th>
+        <th class="heading">Action</th>
     </tr>
     {{#each team}}
+    {{#unless this.status}}
     <tr>
         <th> {{this.team_name}}</th>
        <th>{{this.date_booked}}</th>
        <th>{{this.client_name}}</th>
        <th><a href='mailto:{{this.email}}'>{{this.email}}</a></th>
+          <th class="btns"><a href="/approve/{{this.doc_id}}/single">Approve</a><a href="/decline/{{this.doc_id}}/single">Decline</a></th>
+    
+    </tr>
+    {{/unless}}
+  {{/each}}
+</table>
+</div>
 
+</div>
+<div class="approved div">
+<div class="table-wrapper">
+    <div class="top-section">
+       <h1 class="title">Individual Talent</h1>
+    </div>
+<table>
+    <tr>
+        <th class="heading">Name</th>
+        <th class="heading">Surname</th>
+        <th class="heading">Occupation</th> 
+        <th class="heading">Date Booked</th>
+        <th class="heading">Client Name</th>
+        <th class="heading">Client Email</th>
+        <th class="heading">Action</th>
+    </tr>
+    {{#each approvedData}}
+    <tr>
+        <th>{{this.name}}</th>
+       <th>{{this.surname}}</th>
+       <th>{{this.occupation}}</th>
+       <th>{{this.date_booked}}</th>
+       <th>{{this.client_name}}</th>
+       <th><a href='mailto:{{this.email}}'>{{this.email}}</a></th>
+        <th class="btns"><a href='mailto:{{this.email}}'>Email</a></th>
     </tr>
   {{/each}}
 </table>
+</div>
+   
+
+
+
+<br> <br> <br>
+<div class="table-wrapper">
+     <div class="top-section">
+        <h1 class="title">Teams Talent</h1>
+    </div>
+<table class="three">
+    
+    <tr>
+        <th class="heading">Team Names</th>
+        <th class="heading">Date Booked</th>
+        <th class="heading">Client Name</th>
+        <th class="heading">Client Email</th>
+        <th class="heading">Action</th>
+    </tr>
+    {{#each approvedDataTeam}}
+    {{#unless this.status}}
+    <tr>
+        <th> {{this.team_name}}</th>
+       <th>{{this.date_booked}}</th>
+       <th>{{this.client_name}}</th>
+       <th><a href='mailto:{{this.email}}'>{{this.email}}</a></th>
+          <th class="btns"><a href='mailto:{{this.email}}'>Email</a></th>
+    
+    </tr>
+    {{/unless}}
+  {{/each}}
+</table>
+</div>
+   
+</div>
+
 <link rel="stylesheet" href="/css/table.css">
+<link rel="stylesheet" href="/css/tabs.css">
+<script defer src="/js/tabs.js"></script>

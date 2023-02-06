@@ -1,0 +1,45 @@
+.tabs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: grey;
+    width: 90%;
+    margin: auto;
+}
+
+.pending-approval-btn,
+.approved-btn {
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    min-width: 10%;
+    transition: 1.5s ease-in-out;
+    cursor: pointer;
+}
+
+.pending-approval-btn:hover,
+.approved-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.active {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
+.div {
+    display: none;
+}
+
+.pending-approval {
+    display: block;
+}
+
+.top-section {
+    background-color: #000;
+    width: 90%;
+    margin: auto;
+}
